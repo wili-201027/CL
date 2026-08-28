@@ -70,7 +70,7 @@ namespace Terminal
             inputTextBox.ForeColor = Color.FromArgb(80, 220, 255);
             inputTextBox.Location = new Point(205, 108);
             inputTextBox.Name = "inputTextBox";
-            inputTextBox.Size = new Size(305, 20);
+            inputTextBox.Size = new Size(305, 14);
             inputTextBox.TabIndex = 1;
             inputTextBox.KeyDown += inputTextBox_KeyDown;
             inputTextBox.PreviewKeyDown += inputTextBox_PreviewKeyDown;
