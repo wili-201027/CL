@@ -1,4 +1,4 @@
-# Terminal (CL) ⏰
+# Terminal (CL)
 
 Un clon de terminal interactivo desarrollado en .NET 8 y Windows Forms. 
 
