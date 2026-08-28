@@ -14,7 +14,7 @@ namespace Terminal
         private const int MaxHistoryLines = 5;
         private readonly List<VentanaBase> _windowInstances = new List<VentanaBase>();
 
-        private Panel InputWrapperPanel;
+        private DoubleBufferedPanel InputWrapperPanel;
         private Label LblStatusTop;
         private Label LblSubtitle;
         private Label LblVersion;
@@ -49,15 +49,33 @@ namespace Terminal
         public Form1()
         {
             InitializeComponent();
-            InitializeTerminalUI();
-            StartDnaAnimation();
-
             this.TargetWidth = 550;
             this.TargetHeight = 700;
 
             this.LblTitle.Text = "TERMINAL";
 
             this.is_active = true;
+            InitializeTerminalUI();
+            EnsureControlsInMainContainer();
+            StartDnaAnimation();
+
+            inputTextBox.Focus();
+        }
+        private void EnsureControlsInMainContainer()
+        {
+            MainContainer.Controls.Add(Output);
+
+            InputWrapperPanel.Controls.Add(inputTextBox);
+            InputWrapperPanel.Controls.Add(LastCommand);
+
+            inputTextBox.Location = new Point(185, 10);
+            inputTextBox.Size = new Size(InputWrapperPanel.Width - 195, 24);
+
+            LastCommand.Location = new Point(185, 44);
+            LastCommand.Size = new Size(InputWrapperPanel.Width - 195, 40);
+
+            inputTextBox.BringToFront();
+            LastCommand.BringToFront();
         }
 
         private void InitializeTerminalUI()
@@ -103,14 +121,26 @@ namespace Terminal
             LblEnergy.Location = new Point(MainContainer.Width - LblEnergy.PreferredWidth - 25, 70);
 
             // 3. Panel Contenedor del Input (El rectángulo central)
-            InputWrapperPanel = new Panel
+            InputWrapperPanel = new DoubleBufferedPanel
             {
                 Location = new Point(20, 100),
-                Size = new Size(MainContainer.Width - 40, 90),
+                //Size = new Size(MainContainer.Width - 180, 90),
+                Size = new Size(this.TargetWidth - 40, 90),
                 BackColor = Color.Transparent
             };
             InputWrapperPanel.Paint += InputWrapperPanel_Paint;
+            InputWrapperPanel.Resize += InputWrapperPanel_resize;
             MainContainer.Controls.Add(InputWrapperPanel);
+        }
+        private void InputWrapperPanel_resize(object sender, EventArgs e)
+        {
+            InputWrapperPanel.Invalidate();
+            if (inputTextBox != null && LastCommand != null)
+            {
+                int calculatedWidth = Math.Max(50, InputWrapperPanel.Width - 195);
+                inputTextBox.Width = calculatedWidth;
+                LastCommand.Width = calculatedWidth;
+            }
         }
 
         private void StartDnaAnimation()
@@ -245,7 +275,7 @@ namespace Terminal
             }
 
             // B) Renderizado ADN Tridimensional Rotatorio
-            DrawAnimatedDNA(g, new Point(115, 65));
+            DrawAnimatedDNA(g, new Point(115, 48));
         }
 
         // Renderizado del gráfico central del ADN en código GDI+
@@ -296,4 +326,24 @@ namespace Terminal
             base.OnFormClosed(e);
         }
     }
+
+    #region Controles Personalizados
+
+    public class DoubleBufferedPanel : Panel
+    {
+        public DoubleBufferedPanel()
+        {
+            // Activa la renderización en memoria intermedia
+            this.DoubleBuffered = true;
+
+            // Optimiza los estilos de control para evitar WM_ERASEBKGND
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+                           ControlStyles.UserPaint |
+                           ControlStyles.OptimizedDoubleBuffer |
+                           ControlStyles.ResizeRedraw, true);
+
+            this.UpdateStyles();
+        }
+    }
+    #endregion
 }

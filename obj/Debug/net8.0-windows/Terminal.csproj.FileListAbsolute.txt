@@ -15,3 +15,21 @@ C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studi
 C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.genruntimeconfig.cache
 C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\ref\Terminal.dll
 C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.ThemeColors.resources
+D:\VSC\CL\CL\bin\Debug\net8.0-windows\Terminal.exe
+D:\VSC\CL\CL\bin\Debug\net8.0-windows\Terminal.deps.json
+D:\VSC\CL\CL\bin\Debug\net8.0-windows\Terminal.runtimeconfig.json
+D:\VSC\CL\CL\bin\Debug\net8.0-windows\Terminal.dll
+D:\VSC\CL\CL\bin\Debug\net8.0-windows\Terminal.pdb
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.Form1.resources
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.ThemeColors.resources
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.csproj.GenerateResource.cache
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.GeneratedMSBuildEditorConfig.editorconfig
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.AssemblyInfoInputs.cache
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.AssemblyInfo.cs
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.csproj.CoreCompileInputs.cache
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.sourcelink.json
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.dll
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\refint\Terminal.dll
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.pdb
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\Terminal.genruntimeconfig.cache
+D:\VSC\CL\CL\obj\Debug\net8.0-windows\ref\Terminal.dll

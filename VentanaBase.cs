@@ -90,7 +90,10 @@ namespace Terminal
             this.StartPosition = FormStartPosition.Manual;
             this.BackColor = Color.FromArgb(28, 170, 218);
             this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.ResizeRedraw, true);
             this.Size = new Size(TargetWidth, TargetHeight);
 
             InitializeCustomUI();
@@ -365,6 +368,7 @@ namespace Terminal
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
+            this.Invalidate();
             using (GraphicsPath path = new GraphicsPath())
             {
                 int radius = this.Height;
@@ -416,10 +420,19 @@ namespace Terminal
     {
         public CyberContainer()
         {
-            this.SetStyle(ControlStyles.SupportsTransparentBackColor | ControlStyles.OptimizedDoubleBuffer |
-                          ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor |
+                ControlStyles.OptimizedDoubleBuffer |
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.ResizeRedraw, true);
             this.BackColor = Color.Transparent;
             this.Padding = new Padding(15);
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            this.Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
