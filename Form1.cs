@@ -16,7 +16,11 @@ namespace Terminal
 
         private Panel InputWrapperPanel;
         private Label LblStatusTop;
+        private Label LblSubtitle;
+        private Label LblVersion;
         private Label LblEnergy;
+
+        private const string AppVersion = "VERSION 3.4.0";
 
         private System.Windows.Forms.Timer _animationTimer;
         private float _dnaRotationAngle = 0f;
@@ -60,6 +64,30 @@ namespace Terminal
         {
             // Fuente base. Si tienes "Gunship" instalada, cámbiala aquí.
             Font terminalFont = new Font("Gunship", 10F, FontStyle.Bold);
+            Font smallFont = new Font("Gunship", 8F);
+
+            // 1. Texto instructivo (Superior Izquierda)
+            LblSubtitle = new Label
+            {
+                Text = "ENTER THE COMMANDS IN THIS WINDOW",
+                ForeColor = ThemeColors.Foreground,
+                Font = smallFont,
+                AutoSize = true,
+                BackColor = Color.Transparent,
+                Location = new Point(20, 15)
+            };
+            MainContainer.Controls.Add(LblSubtitle);
+
+            LblVersion = new Label
+            {
+                Text = AppVersion,
+                ForeColor = ThemeColors.Foreground,
+                Font = smallFont,
+                AutoSize = true,
+                BackColor = Color.Transparent,
+                Location = new Point(20, 32)
+            };
+            MainContainer.Controls.Add(LblVersion);
 
             // 2. Texto de Energía (Derecha)
             LblEnergy = new Label
@@ -72,7 +100,7 @@ namespace Terminal
             };
             MainContainer.Controls.Add(LblEnergy);
             // Posicionamiento dinámico a la derecha
-            LblEnergy.Location = new Point(MainContainer.Width - LblEnergy.PreferredWidth - 25, 75);
+            LblEnergy.Location = new Point(MainContainer.Width - LblEnergy.PreferredWidth - 25, 70);
 
             // 3. Panel Contenedor del Input (El rectángulo central)
             InputWrapperPanel = new Panel
@@ -129,8 +157,8 @@ namespace Terminal
                 _commandHistory.Dequeue();
             }
 
-            // Renderiza el historial ordenado de más reciente a más antiguo o viceversa
-            LastCommand.Text = string.Join(Environment.NewLine, _commandHistory.Reverse());
+            // Renderiza el historial en orden cronologico (mas reciente abajo)
+            LastCommand.Text = string.Join(Environment.NewLine, _commandHistory);
         }
 
         private void ProcessCommand(string command)
@@ -182,14 +210,17 @@ namespace Terminal
 
         private void AppendToOutput(string text)
         {
-            _outputLog.Enqueue(text);
+            _outputLog.Enqueue("- " + text);
 
-            if (_outputLog.Count > 50) // Límite de salida de consola
+            if (_outputLog.Count > 50) // Limite de salida de consola
             {
                 _outputLog.Dequeue();
             }
 
-            Output.Text = string.Join(Environment.NewLine, _outputLog.Reverse());
+            // Orden cronologico (igual que la terminal de referencia): lo mas nuevo al final
+            Output.Text = string.Join(Environment.NewLine, _outputLog);
+            Output.SelectionStart = Output.Text.Length;
+            Output.ScrollToCaret();
         }
 
         // Evento que dibuja los bordes y los gráficos (barras + simulación de ADN) en el panel de Input
