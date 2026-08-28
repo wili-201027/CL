@@ -1,0 +1,17 @@
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\bin\Debug\net8.0-windows\Terminal.exe
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\bin\Debug\net8.0-windows\Terminal.deps.json
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\bin\Debug\net8.0-windows\Terminal.runtimeconfig.json
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\bin\Debug\net8.0-windows\Terminal.dll
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\bin\Debug\net8.0-windows\Terminal.pdb
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.Form1.resources
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.csproj.GenerateResource.cache
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.AssemblyInfoInputs.cache
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.AssemblyInfo.cs
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.csproj.CoreCompileInputs.cache
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.dll
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\refint\Terminal.dll
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.pdb
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.genruntimeconfig.cache
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\ref\Terminal.dll
+C:\Users\PC GAMING\OneDrive\Escriptori\projectes\Visual Studio Code\Visual Studio 2022\Terminal\Terminal\obj\Debug\net8.0-windows\Terminal.ThemeColors.resources
